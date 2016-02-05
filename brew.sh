@@ -80,6 +80,8 @@ brew install xz
 # Install other useful binaries.
 brew install ack
 #brew install exiv2
+brew install coreutils
+brew install gawk
 brew install git
 brew install imagemagick --with-webp
 brew install lua
@@ -90,6 +92,7 @@ brew install pv
 brew install rename
 brew install rhino
 brew install speedtest_cli
+brew install ssh-copy-id
 brew install tree
 brew install webkit2png
 brew install zopfli
@@ -97,6 +100,10 @@ brew install zopfli
 # Install Node.js. Note: this installs `npm` too, using the recommended
 # installation method.
 brew install node
+
+# Install some fun
+brew install cowsay
+brew install fortune
 
 # Remove outdated versions from the cellar.
 brew cleanup
