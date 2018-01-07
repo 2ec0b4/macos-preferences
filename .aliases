@@ -139,3 +139,12 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
+
+# When you forget the most important
+alias fuck='sudo $(history -p \!\!)'
+
+# Git push origin to current branch
+alias gpo='git push origin "$(git-current-branch 2> /dev/null)"'
+
+# Git fetch and checkout
+alias gfc='git fetch && git checkout '
