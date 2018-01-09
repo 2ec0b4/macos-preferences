@@ -2,6 +2,7 @@
 
 if ! [ -x "$(command -v brew)" ]; then
     echo "Install Homebrew";
+    xcode-select --install
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
@@ -42,11 +43,8 @@ npm install npm@latest -g
 echo "Install node packages";
 sudo npm install -g cordova ionic
 
-echo "Install Homebrew Cask";
-brew tap phinze/cask
-brew install brew-cask
-
 echo "Install Homebrew Cask apps";
+brew tap caskroom/cask
 # https://caskroom.github.io/search
 homebrew_cask_packages=(
 # Core apps
