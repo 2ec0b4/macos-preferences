@@ -374,12 +374,12 @@ defaults write com.apple.dock persistent-apps -array
 
 # Personnalize the Dock
 apps_to_dock=(
-	#"Finder"	#default
-	"Calendar"
-	"Mail"
-	"Headset"
-	"Spotify"
-	"Dashlane"
+    #"Finder"	#default
+    "Calendar"
+    "Mail"
+    "Headset"
+    "Spotify"
+    "Dashlane"
     "-"
     "Skype"
     "Slack"
