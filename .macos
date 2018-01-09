@@ -388,11 +388,11 @@ apps_to_dock=(
     "BBEdit"
     "Safari"
     "Google Chrome"
-	"Firefox"
-	"Opera Neon"
-	"Sequel Pro"
-	"Transmit"
-	"iTerm"
+    "Firefox"
+    "Opera Neon"
+    "Sequel Pro"
+    "Transmit"
+    "iTerm"
 )
 
 for app_to_dock in "${apps_to_dock[@]}"; do
