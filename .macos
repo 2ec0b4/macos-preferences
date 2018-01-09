@@ -370,7 +370,40 @@ defaults write com.apple.dock show-process-indicators -bool true
 # Wipe all (default) app icons from the Dock
 # This is only really useful when setting up a new Mac, or if you don’t use
 # the Dock to launch apps.
-#defaults write com.apple.dock persistent-apps -array
+defaults write com.apple.dock persistent-apps -array
+
+# Personnalize the Dock
+apps_to_dock=(
+	#"Finder"	#default
+	"Calendar"
+	"Mail"
+	"Headset"
+	"Spotify"
+	"Dashlane"
+    "-"
+    "Skype"
+    "Slack"
+    "nativefier/DevDocs-darwin-x64/DevDocs"
+    "SourceTree"
+    "BBEdit"
+    "Safari"
+    "Google Chrome"
+	"Firefox"
+	"Opera Neon"
+	"Sequel Pro"
+	"Transmit"
+	"iTerm"
+)
+
+for app_to_dock in "${apps_to_dock[@]}"; do
+echo ${app_to_dock};
+    if [ "${app_to_dock}" = "-" ]; then
+        echo "spacer";
+        defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}';
+    else
+        defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/${app_to_dock}.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+    fi
+done
 
 # Show only open applications in the Dock
 #defaults write com.apple.dock static-only -bool true
@@ -400,7 +433,7 @@ defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0
 
 # Automatically hide and show the Dock
-defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide -bool false
 
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
@@ -751,8 +784,8 @@ for app in "Activity Monitor" \
 	"Calendar" \
 	"cfprefsd" \
 	"Contacts" \
-	"Dock" \
 	"Finder" \
+	"Dock" \
 	"Mail" \
 	"Messages" \
 	"Photos" \
