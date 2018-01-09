@@ -57,6 +57,7 @@ homebrew_cask_packages=(
 # Dev apps
     "android-studio"
     "android-file-transfer"
+    "bbedit"
     "charles"
     "docker"
     "docker-toolbox"
@@ -84,6 +85,7 @@ homebrew_cask_packages=(
     "slack"
     "skype"
     "spotify"
+    "transmit"
     "xscope"
 )
 
@@ -106,7 +108,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 	echo "Install Mac App Store apps";
     mas signin
     mas_apps=(
-        #"497799835" # XCode
+        "497799835" # XCode
     )
 
     for mas_app in "${mas_apps[@]}"; do
