@@ -93,6 +93,15 @@ for homebrew_cask_package in "${homebrew_cask_packages[@]}"; do
     brew cask install "$homebrew_cask_package"
 done;
 
+if ! [ -a "/Applications/nativefier/DevDocs-darwin-x64/DevDocs.app" ]; then
+	echo "Get https://devdocs.io/ as an app";
+    app_icon=$(pwd)"/ressources/nativefier/app-icon.icns";
+    mkdir /Applications/nativefier > /dev/null 2>&1;
+    cd /Applications/nativefier;
+    nativefier --name "DevDocs" --verbose --no-overwrite --counter --icon ${app_icon} --fast-quit "https://devdocs.io/";
+    cd -;
+fi
+
 read -p "Install Mac App Store apps (y/n)?" -n 1;
 echo "";
 if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -106,10 +115,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         mas install "$mas_app"
     done
 fi;
-
-echo "Get DevDocs as an app";
-npm install -g nativefier
-nativefier --name "DevDocs" --verbose --counter --icon app-icon.icns --fast-quit --flash "https://devdocs.io/";
 
 echo "Cleanup";
 brew cleanup --force
