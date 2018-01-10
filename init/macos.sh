@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# ~/.macos — https://mths.be/macos
+CURRENT_PATH=$(pwd);
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
@@ -370,40 +370,7 @@ defaults write com.apple.dock show-process-indicators -bool true
 # Wipe all (default) app icons from the Dock
 # This is only really useful when setting up a new Mac, or if you don’t use
 # the Dock to launch apps.
-defaults write com.apple.dock persistent-apps -array
-
-# Personnalize the Dock
-apps_to_dock=(
-    #"Finder"	#default
-    "Calendar"
-    "Mail"
-    "Headset"
-    "Spotify"
-    "Dashlane"
-    "-"
-    "Skype"
-    "Slack"
-    "nativefier/DevDocs-darwin-x64/DevDocs"
-    "SourceTree"
-    "BBEdit"
-    "Safari"
-    "Google Chrome"
-    "Firefox"
-    "Opera Neon"
-    "Sequel Pro"
-    "Transmit"
-    "iTerm"
-)
-
-for app_to_dock in "${apps_to_dock[@]}"; do
-echo ${app_to_dock};
-    if [ "${app_to_dock}" = "-" ]; then
-        echo "spacer";
-        defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}';
-    else
-        defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/${app_to_dock}.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-    fi
-done
+#defaults write com.apple.dock persistent-apps -array
 
 # Show only open applications in the Dock
 #defaults write com.apple.dock static-only -bool true
@@ -637,7 +604,7 @@ sudo mdutil -i on / > /dev/null
 sudo mdutil -E / > /dev/null
 
 ###############################################################################
-# Terminal & iTerm 2                                                          #
+# Terminal                                                         #
 ###############################################################################
 
 # Only use UTF-8 in Terminal.app
@@ -647,7 +614,7 @@ defaults write com.apple.terminal StringEncodings -array 4
 TERM_PROFILE='Solarized Dark xterm-256color';
 CURRENT_PROFILE="$(defaults read com.apple.terminal 'Default Window Settings')";
 if [ "${CURRENT_PROFILE}" != "${TERM_PROFILE}" ]; then
-	open "${HOME}/init/${TERM_PROFILE}.terminal";
+	open "${CURRENT_PATH}/ressources/Terminal/${TERM_PROFILE}.terminal";
 	sleep 1; # Wait a bit to make sure the theme is loaded
 	defaults write com.apple.terminal 'Default Window Settings' -string "${TERM_PROFILE}";
 	defaults write com.apple.terminal 'Startup Window Settings' -string "${TERM_PROFILE}";
@@ -664,12 +631,6 @@ defaults write com.apple.terminal SecureKeyboardEntry -bool true
 
 # Disable the annoying line marks
 defaults write com.apple.Terminal ShowLineMarks -int 0
-
-# Install the Solarized Dark theme for iTerm
-open "${HOME}/init/Solarized Dark.itermcolors"
-
-# Don’t display the annoying prompt when quitting iTerm
-defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 ###############################################################################
 # Time Machine                                                                #
