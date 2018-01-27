@@ -144,7 +144,7 @@ alias reload="exec $SHELL -l"
 alias fuck='sudo $(history -p \!\!)'
 
 # Git push origin to current branch
-alias gpo='git push origin "$(git-current-branch 2> /dev/null)"'
+alias gpo='git push origin head'
 
 # Git fetch and checkout
 alias gfc='git fetch && git checkout '
