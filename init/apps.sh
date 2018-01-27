@@ -87,6 +87,16 @@ homebrew_cask_packages=(
     "spotify"
     "transmit"
     "xscope"
+# Quick Look plugins (see https://github.com/sindresorhus/quick-look-plugins)
+    "qlcolorcode"
+    "qlstephen"
+    "qlmarkdown"
+    "quicklook-json"
+    "qlimagesize"
+    "webpquicklook"
+    "suspicious-package"
+    "quicklookase"
+    "qlvideo"
 )
 
 for homebrew_cask_package in "${homebrew_cask_packages[@]}"; do
