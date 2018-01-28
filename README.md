@@ -6,7 +6,7 @@ Mainly based on [Mathias’s dotfiles](https://github.com/mathiasbynens/dotfiles
 
 ```bash
 mkdir ~/Projects && cd ~/Projects
-git clone https://github.com/2ec0b4/dotfiles.git && cd dotfiles && source init/bootstrap.sh
+git clone https://github.com/2ec0b4/macos-preferences.git && cd macos-preferences && source init/bootstrap.sh
 ```
 
 ## macOS preferences
