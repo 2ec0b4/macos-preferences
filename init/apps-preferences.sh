@@ -30,6 +30,7 @@ apps_to_dock=(
     "nativefier/DevDocs-darwin-x64/DevDocs"
     "SourceTree"
     "BBEdit"
+    "PhpStorm"
     "Safari"
     "Google Chrome"
     "Firefox"

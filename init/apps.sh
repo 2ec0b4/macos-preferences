@@ -64,6 +64,7 @@ homebrew_cask_packages=(
     "firefox"
     "google-chrome"
     "mysqlworkbench"
+    "phpstorm"
     "poedit"
     "postman"
     "sequel-pro"
