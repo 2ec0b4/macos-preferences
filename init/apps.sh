@@ -51,7 +51,6 @@ homebrew_cask_packages=(
     "cakebrew"
     "flycut"
     "openoffice"
-    "transmit"
     "vlc"
     "iterm2"
 # Dev apps
