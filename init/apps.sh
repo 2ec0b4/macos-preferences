@@ -103,6 +103,9 @@ for homebrew_cask_package in "${homebrew_cask_packages[@]}"; do
     brew cask install "$homebrew_cask_package"
 done;
 
+# Restart Quick Look
+qlmanage -r
+
 echo "PHP Tools";
 brew tap homebrew/dupes
 brew tap homebrew/php
