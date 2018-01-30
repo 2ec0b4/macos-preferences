@@ -45,7 +45,7 @@ for app_to_dock in "${apps_to_dock[@]}"; do
 echo ${app_to_dock};
     if [ "${app_to_dock}" = "-" ]; then
         echo "spacer";
-        defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}';
+        defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="small-spacer-tile";}';
     else
         defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/${app_to_dock}.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
     fi
