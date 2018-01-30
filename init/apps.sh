@@ -113,6 +113,10 @@ composer global require "squizlabs/php_codesniffer=3.*"
 composer global require "phpmd/phpmd=2.*"
 
 if ! [ -a "/Applications/nativefier/DevDocs-darwin-x64/DevDocs.app" ]; then
+    if ! [ -x "$(command -v nativefier)" ]; then
+        echo "Install nativefier";
+        npm install nativefier -g
+    fi
 	echo "Get https://devdocs.io/ as an app";
     app_icon=$(pwd)"/ressources/nativefier/app-icon.icns";
     mkdir /Applications/nativefier > /dev/null 2>&1;
