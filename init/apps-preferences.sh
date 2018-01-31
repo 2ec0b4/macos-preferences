@@ -25,7 +25,7 @@ apps_to_dock=(
     "Spotify"
     "Dashlane"
     "-"
-    "Skype"
+    "Franz"
     "Slack"
     "nativefier/DevDocs-darwin-x64/DevDocs"
     "SourceTree"
