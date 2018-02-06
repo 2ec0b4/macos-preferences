@@ -131,6 +131,15 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # Set another wallpaper image
 sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "UPDATE data SET value = '/Library/Desktop Pictures/Rice Paddy.jpg';"
 
+# Dark mode
+osascript <<EOD
+tell application "System Events"
+	tell appearance preferences
+		set dark mode to true
+	end tell
+end tell
+EOD
+
 ###############################################################################
 # SSD-specific tweaks                                                         #
 ###############################################################################
