@@ -1,0 +1,35 @@
+#!/bin/bash
+
+COMMIT_EDITMSG=$1
+MESSAGE=$(cat $COMMIT_EDITMSG)
+
+getBranchName() {
+  local NAME=$(git branch | grep '*' | sed 's/* //')
+
+  echo $NAME
+}
+
+addBranchName() {
+  local NAME=$(getBranchName)
+  local DESCRIPTION=$(git config branch."$NAME".description)
+  echo "($NAME) $(cat $COMMIT_EDITMSG)" > $COMMIT_EDITMSG
+  if [ -n "$DESCRIPTION" ]
+  then
+    echo "" >> $COMMIT_EDITMSG
+    echo $DESCRIPTION >> $COMMIT_EDITMSG
+  fi
+}
+
+MERGE=$(cat $COMMIT_EDITMSG|grep -i 'merge'|wc -l)
+
+
+if [ $MERGE -eq 1 ] ; then
+  exit
+fi
+
+NAME=$(getBranchName)
+if [[ "$MESSAGE" =~ "($NAME)" ]]; then
+  exit
+fi
+
+addBranchName
