@@ -28,7 +28,7 @@ homebrew_packages=(
     "ffmpeg"
     "fortune"
     "mas"
-    "node"
+    "nvm"
     "ssh-copy-id"
     "wget"
 )
@@ -37,11 +37,16 @@ for homebrew_package in "${homebrew_packages[@]}"; do
     brew install "$homebrew_package"
 done
 
+export NVM_DIR="$HOME/.nvm"
+. "$(brew --prefix nvm)/nvm.sh"
+
+nvm install --lts
+
 echo "Upgrading npm";
 npm install npm@latest -g
 
 echo "Install node packages";
-sudo npm install -g cordova ionic
+npm install -g cordova ionic
 
 echo "Install Homebrew Cask apps";
 brew tap caskroom/cask
@@ -118,7 +123,7 @@ composer global require "phpmd/phpmd=2.*"
 if ! [ -a "/Applications/nativefier/DevDocs-darwin-x64/DevDocs.app" ]; then
     if ! [ -x "$(command -v nativefier)" ]; then
         echo "Install nativefier";
-        npm install nativefier -g
+        npm install -g nativefier
     fi
 	echo "Get https://devdocs.io/ as an app";
     app_icon=$(pwd)"/ressources/nativefier/app-icon.icns";
