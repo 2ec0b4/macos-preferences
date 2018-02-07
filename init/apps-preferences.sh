@@ -11,7 +11,14 @@ open "${CURRENT_PATH}/ressources/iTerm2/Solarized Dark.itermcolors"
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 ###############################################################################
-# Personnalize the Dock                                                                      #
+# Vagrant                                                                     #
+###############################################################################
+
+vagrant plugin install vagrant-hostmanager
+vagrant plugin install vagrant-triggers
+
+###############################################################################
+# Personnalize the Dock                                                       #
 ###############################################################################
 
 # Wipe all (default) app icons from the Dock
