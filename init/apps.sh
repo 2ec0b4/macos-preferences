@@ -46,7 +46,7 @@ echo "Upgrading npm";
 npm install npm@latest -g
 
 echo "Install node packages";
-npm install -g cordova ionic
+npm install -g cordova ionic gulp
 
 echo "Install Homebrew Cask apps";
 brew tap caskroom/cask
