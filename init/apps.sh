@@ -59,6 +59,7 @@ homebrew_cask_packages=(
     "openoffice"
     "vlc"
     "iterm2"
+    "the-unarchiver"
 # Dev apps
     "android-file-transfer"
     "android-platform-tools"
