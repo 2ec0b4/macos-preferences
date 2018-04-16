@@ -114,8 +114,8 @@ qlmanage -r
 echo "PHP Tools";
 brew tap homebrew/dupes
 brew tap homebrew/php
-brew install php71
-brew install mcrypt php71-mcrypt
+brew install php@7.1
+brew install mcrypt
 brew install composer
 composer global require "squizlabs/php_codesniffer=3.*"
 composer global require "phpmd/phpmd=2.*"
