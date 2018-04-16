@@ -25,6 +25,7 @@ homebrew_packages=(
     "cowsay"
     "dnsmasq"
     "git"
+    "gradle"
     "ffmpeg"
     "fortune"
     "mas"
@@ -59,8 +60,9 @@ homebrew_cask_packages=(
     "vlc"
     "iterm2"
 # Dev apps
-    "android-studio"
     "android-file-transfer"
+    "android-platform-tools"
+    "android-studio"
     "bbedit"
     "charles"
     "docker"
