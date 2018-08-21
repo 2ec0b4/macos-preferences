@@ -58,7 +58,7 @@ homebrew_cask_packages=(
 # Core apps
     "cakebrew"
     "flycut"
-    "openoffice"
+    "libreoffice"
     "vlc"
     "iterm2"
     "the-unarchiver"
