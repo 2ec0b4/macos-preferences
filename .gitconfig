@@ -78,6 +78,9 @@
 	# Undo last commit
 	undo = reset --soft HEAD^
 
+	# Clear untracked files
+	clear = clean -qfdx
+
 [apply]
 
 	# Detect whitespace errors when applying a patch
