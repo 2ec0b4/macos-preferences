@@ -53,6 +53,7 @@ npm install -g cordova ionic gulp
 
 echo "Install Homebrew Cask apps";
 brew tap caskroom/cask
+brew tap buo/cask-upgrade
 # https://caskroom.github.io/search
 homebrew_cask_packages=(
 # Core apps
