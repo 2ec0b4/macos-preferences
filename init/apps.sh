@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+CURRENT_PATH=$(pwd);
+
 if ! [ -x "$(command -v brew)" ]; then
     echo "Install Homebrew";
     xcode-select --install
@@ -129,7 +131,7 @@ if ! [ -a "/Applications/nativefier/DevDocs-darwin-x64/DevDocs.app" ]; then
         npm install -g nativefier
     fi
 	echo "Get https://devdocs.io/ as an app";
-    app_icon=$(pwd)"/ressources/nativefier/app-icon.icns";
+    app_icon=${CURRENT_PATH}"/ressources/nativefier/app-icon.icns";
     mkdir /Applications/nativefier > /dev/null 2>&1;
     cd /Applications/nativefier;
     nativefier --name "DevDocs" --verbose --no-overwrite --counter --icon ${app_icon} --fast-quit "https://devdocs.io/";
