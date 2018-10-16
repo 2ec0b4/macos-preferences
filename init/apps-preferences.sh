@@ -37,6 +37,7 @@ apps_to_dock=(
     "Franz"
     "Slack"
     "nativefier/DevDocs-darwin-x64/DevDocs"
+    "nativefier/DevHints-darwin-x64/DevHints"
     "SourceTree"
     "BBEdit"
     "PhpStorm"

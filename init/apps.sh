@@ -126,18 +126,28 @@ brew install composer
 composer global require "squizlabs/php_codesniffer=3.*"
 composer global require "phpmd/phpmd=2.*"
 
-if ! [ -a "/Applications/nativefier/DevDocs-darwin-x64/DevDocs.app" ]; then
-    if ! [ -x "$(command -v nativefier)" ]; then
-        echo "Install nativefier";
-        npm install -g nativefier
-    fi
-	echo "Get https://devdocs.io/ as an app";
-    app_icon=${CURRENT_PATH}"/ressources/nativefier/app-icon.icns";
-    mkdir /Applications/nativefier > /dev/null 2>&1;
-    cd /Applications/nativefier;
-    nativefier --name "DevDocs" --verbose --no-overwrite --counter --icon ${app_icon} --fast-quit "https://devdocs.io/";
-    cd -;
+echo "Websites as app";
+if [ ! -x "$(command -v nativefier)" ]; then
+    echo "Install nativefier";
+    npm install -g nativefier
 fi
+
+mkdir /Applications/nativefier > /dev/null 2>&1;
+cd /Applications/nativefier;
+
+if [ ! -e "/Applications/nativefier/DevDocs-darwin-x64/DevDocs.app" ]; then
+	echo "Get https://devdocs.io/ as an app";
+    app_icon=${CURRENT_PATH}"/ressources/nativefier/devdocs.png";
+    nativefier --name "DevDocs" --verbose --no-overwrite --counter --icon ${app_icon} --fast-quit "https://devdocs.io/";
+fi
+
+if [ ! -e "/Applications/nativefier/DevHints-darwin-x64/DevHints.app" ]; then
+    echo "Get https://devhints.io/ as an app";
+    app_icon=${CURRENT_PATH}"/ressources/nativefier/devhints.png";
+    nativefier --name "DevHints" --verbose --no-overwrite --counter --icon ${app_icon} --fast-quit "https://devhints.io/";
+fi
+
+cd -;
 
 read -p "Install Mac App Store apps (y/n)?" -n 1;
 echo "";
