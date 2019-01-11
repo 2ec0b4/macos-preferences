@@ -118,8 +118,6 @@ done;
 qlmanage -r
 
 echo "PHP Tools";
-brew tap homebrew/dupes
-brew tap homebrew/php
 brew install php@7.1
 brew install mcrypt
 brew install composer
