@@ -23,6 +23,7 @@ fi;
 homebrew_packages=(
     "coreutils"
     "moreutils"
+    "entr"
     "findutils"
     "cowsay"
     "dnsmasq"
