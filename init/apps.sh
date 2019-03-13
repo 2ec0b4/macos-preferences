@@ -34,6 +34,9 @@ homebrew_packages=(
     "nvm"
     "ssh-copy-id"
     "wget"
+# Docker
+    "docker"
+    "docker-compose"
 )
 
 for homebrew_package in "${homebrew_packages[@]}"; do
